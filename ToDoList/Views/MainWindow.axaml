@@ -3,13 +3,15 @@
         xmlns:vm="using:ToDoList.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:ToDoList.Views"
+		xmlns:views="clr-namespace:ToDoList.Views"
         mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
         x:Class="ToDoList.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Avalonia To Do List">
-	<Design.DataContext>
+        Title="Avalonia To Do List"
+		x:DataType="vm:MainViewModel"
+		Content="{Binding ContentViewModel}">
+	<!--<Design.DataContext>
 		<vm:MainViewModel/>
-	</Design.DataContext>
-        <views:ToDoListView />
+	</Design.DataContext>-->
+        <views:ToDoListView DataContext="{Binding ToDoList}" />
 </Window>
